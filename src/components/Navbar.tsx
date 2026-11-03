@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { ArrowUpRight, FileText, Menu, X } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
-interface NavbarProps { onOpenTerminal: () => void; onOpenSimulator: () => void; onOpenPoster: () => void; }
+interface NavbarProps { onOpenTerminal: () => void; onOpenPoster: () => void; }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenSimulator, onOpenPoster }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenPoster }) => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => { const onScroll = () => setScrolled(window.scrollY > 24); window.addEventListener('scroll', onScroll); return () => window.removeEventListener('scroll', onScroll); }, []);
@@ -22,7 +22,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenSimulator,
           <button className="editorial-menu" onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'} type="button">{open ? <X size={19} /> : <Menu size={19} />}</button>
         </div>
       </div>
-      {open && <div className="editorial-mobile-menu"><a href="#projects" onClick={close}>Work</a><a href="#skills" onClick={close}>Capabilities</a><a href="#journey" onClick={close}>About</a><a href="#contact" onClick={close}>Contact</a><button onClick={() => { close(); onOpenSimulator(); }} type="button">Try the RAG simulator</button><button onClick={() => { close(); onOpenTerminal(); }} type="button">Open terminal</button></div>}
+      {open && <div className="editorial-mobile-menu"><a href="#projects" onClick={close}>Work</a><a href="#skills" onClick={close}>Capabilities</a><a href="#journey" onClick={close}>About</a><a href="#contact" onClick={close}>Contact</a><button onClick={() => { close(); onOpenTerminal(); }} type="button">Open engineering notes</button></div>}
     </header>
   );
 };

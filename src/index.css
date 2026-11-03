@@ -84,7 +84,7 @@ body { background: var(--ink); color: var(--paper); font-family: 'Manrope', 'Plu
 .editorial-portrait-column { align-self: end; }
 .editorial-portrait-frame { position: relative; width: 100%; aspect-ratio: 4 / 5; background: #c6b5a0; }
 .editorial-portrait-frame::after { content: ''; position: absolute; inset: 14px -14px -14px 14px; border: 1px solid var(--accent); pointer-events: none; }
-.editorial-portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(.22) sepia(.12) contrast(1.04); }
+.editorial-portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: saturate(.96) contrast(1.04); }
 .editorial-portrait-caption { position: absolute; z-index: 1; inset: auto 15px 13px; display: flex; justify-content: space-between; color: white; font: 10px/1.2 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: .1em; }
 .editorial-side-note { max-width: 270px; margin: 30px 0 0 auto; color: #64716b; font: italic 14px/1.55 'DM Serif Display', Georgia, serif; }
 .editorial-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(23,32,29,.18); border-bottom: 1px solid rgba(23,32,29,.18); }

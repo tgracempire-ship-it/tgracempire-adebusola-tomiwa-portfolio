@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, Terminal as TerminalIcon, CornerDownLeft, Sparkles } from 'lucide-react';
+import { X, Terminal as TerminalIcon, CornerDownLeft } from 'lucide-react';
 import { PERSONAL_INFO, PROJECTS } from '../data/portfolioData';
 
 interface TerminalModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onOpenSimulator: () => void;
 }
 
 interface CommandLog {
@@ -13,7 +12,7 @@ interface CommandLog {
   output: React.ReactNode;
 }
 
-export const TerminalModal: React.FC<TerminalModalProps> = ({ isOpen, onClose, onOpenSimulator }) => {
+export const TerminalModal: React.FC<TerminalModalProps> = ({ isOpen, onClose }) => {
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<CommandLog[]>([
     {
@@ -114,16 +113,6 @@ export const TerminalModal: React.FC<TerminalModalProps> = ({ isOpen, onClose, o
             <p>2. <span className="text-slate-400">Vector Embeddings:</span> Chunks mapped to 768-D dense manifold in ChromaDB.</p>
             <p>3. <span className="text-slate-400">Semantic Search:</span> Normalized cosine similarity retrieval under 180ms.</p>
             <p>4. <span className="text-slate-400">Grounded Synthesis:</span> Streaming generation via Google Gemini 2.5 Flash.</p>
-            <button
-              onClick={() => {
-                onClose();
-                onOpenSimulator();
-              }}
-              className="mt-2 px-3 py-1 bg-cyan-500 text-slate-950 font-bold rounded text-[11px] flex items-center gap-1"
-            >
-              <Sparkles className="w-3 h-3" />
-              Launch GUI RAG Simulator
-            </button>
           </div>
         );
         break;

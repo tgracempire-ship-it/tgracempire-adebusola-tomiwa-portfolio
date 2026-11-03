@@ -1,14 +1,13 @@
 import React from 'react';
-import { ArrowDownRight, ArrowUpRight, ExternalLink, FileText, Sparkles } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, ExternalLink, FileText } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface HeroProps {
-  onOpenSimulator: () => void;
   onOpenTerminal: () => void;
   onOpenPoster: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenSimulator, onOpenTerminal, onOpenPoster }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenTerminal, onOpenPoster }) => {
   return (
     <section className="editorial-hero">
       <div className="editorial-hero__wash" aria-hidden="true" />
@@ -35,7 +34,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSimulator, onOpenTerminal, onO
 
           <div className="editorial-portrait-column">
             <div className="editorial-portrait-frame">
-              <img src="/images/profile-generated.png" alt="Adebusola Tomiwa" />
+              <img
+                src="/images/profile-generated.png"
+                alt="Adebusola Tomiwa"
+                loading="eager"
+                decoding="async"
+                onError={(event) => {
+                  event.currentTarget.onerror = null;
+                  event.currentTarget.src = "/images/avatar.jpg";
+                }}
+              />
               <div className="editorial-portrait-caption"><span>01 / portrait</span><span>{PERSONAL_INFO.location}</span></div>
             </div>
             <p className="editorial-side-note">Production-minded. Curious about the space between people and machines.</p>
@@ -47,8 +55,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSimulator, onOpenTerminal, onO
         </div>
 
         <div className="editorial-hero__tools">
-          <button onClick={onOpenSimulator} type="button"><Sparkles size={15} /> Try the RAG simulator</button>
-          <button onClick={onOpenTerminal} type="button">Open terminal <ExternalLink size={14} /></button>
+          <button onClick={onOpenTerminal} type="button">Open engineering notes <ExternalLink size={14} /></button>
         </div>
       </div>
     </section>

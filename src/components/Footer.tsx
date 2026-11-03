@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenTerminal }) => {
           {/* Center Navigation Links */}
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-mono text-slate-400">
             <a href="#projects" className="hover:text-cyan-400 transition-colors">Projects</a>
-            <a href="#rag-simulator" className="hover:text-cyan-400 transition-colors">RAG Simulator</a>
+            <a href="#skills" className="hover:text-cyan-400 transition-colors">Capabilities</a>
             <a href="#skills" className="hover:text-cyan-400 transition-colors">Architecture</a>
             <a href="#journey" className="hover:text-cyan-400 transition-colors">Journey</a>
             <button onClick={onOpenTerminal} className="hover:text-cyan-400 transition-colors flex items-center gap-1">
