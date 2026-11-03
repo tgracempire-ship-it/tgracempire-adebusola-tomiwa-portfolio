@@ -34,7 +34,7 @@ export const ExecutivePosterModal: React.FC<ExecutivePosterModalProps> = ({ isOp
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-[#17201d]/80 backdrop-blur-md overflow-y-auto">
+    <div className="dossier-print-overlay fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-[#17201d]/80 backdrop-blur-md overflow-y-auto">
       
       {/* Floating Action Controls */}
       <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-2.5 print:hidden">
