@@ -9,7 +9,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenTerminal, onOpenPoster }) => {
   return (
-    <section className="editorial-hero">
+    <section className="editorial-hero" data-reveal="hero">
       <div className="editorial-hero__wash" aria-hidden="true" />
       <div className="editorial-wrap editorial-hero__inner">
         <div className="editorial-hero__topline">

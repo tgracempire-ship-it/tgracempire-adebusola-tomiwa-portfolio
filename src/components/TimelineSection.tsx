@@ -4,7 +4,7 @@ import { TIMELINE_EVENTS } from '../data/portfolioData';
 
 export const TimelineSection: React.FC = () => {
   return (
-    <section id="journey" className="py-24 bg-[#090D18] border-t border-slate-800/80 relative">
+    <section id="journey" className="py-24 bg-[#090D18] border-t border-slate-800/80 relative" data-reveal="section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -24,7 +24,7 @@ export const TimelineSection: React.FC = () => {
         {/* Timeline List */}
         <div className="relative border-l border-slate-800 ml-4 sm:ml-8 space-y-12">
           {TIMELINE_EVENTS.map((event, idx) => (
-            <div key={idx} className="relative pl-6 sm:pl-10">
+            <div key={idx} className="relative pl-6 sm:pl-10" data-reveal="item">
               
               {/* Timeline Indicator Dot */}
               <div className="absolute -left-3 top-1 w-6 h-6 rounded-full bg-[#080B12] border-2 border-cyan-400 flex items-center justify-center">

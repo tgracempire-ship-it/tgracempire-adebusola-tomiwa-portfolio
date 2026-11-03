@@ -26,7 +26,7 @@ export const SkillsSection: React.FC = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-[#080B12] relative">
+    <section id="skills" className="py-24 bg-[#080B12] relative" data-reveal="section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -65,6 +65,7 @@ export const SkillsSection: React.FC = () => {
           {SKILL_CATEGORIES.map((category, idx) => (
             <div 
               key={idx}
+              data-reveal="item"
               className="p-6 sm:p-8 rounded-2xl bg-gradient-to-b from-slate-900/70 to-[#0A0E18] border border-slate-800/90 shadow-xl"
             >
               <div className="flex items-center gap-3 mb-3">

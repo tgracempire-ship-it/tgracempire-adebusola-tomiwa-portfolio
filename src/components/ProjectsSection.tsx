@@ -39,7 +39,7 @@ export const ProjectsSection: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-[#0b1018] relative">
+    <section id="projects" className="py-24 bg-[#0b1018] relative" data-reveal="section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -88,6 +88,7 @@ export const ProjectsSection: React.FC = () => {
             return (
               <div
                 key={project.id}
+                data-reveal="item"
                 className={`rounded-none bg-[#111722] border transition-all duration-300 flex flex-col justify-between overflow-hidden group ${
                   isFeatured 
                     ? 'border-cyan-400/60 shadow-xl shadow-cyan-950/20' 

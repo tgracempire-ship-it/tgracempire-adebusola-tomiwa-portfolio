@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ProjectsSection } from './components/ProjectsSection';
@@ -12,6 +12,24 @@ import { ExecutivePosterModal } from './components/ExecutivePosterModal';
 export function App() {
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const [isPosterOpen, setIsPosterOpen] = useState(false);
+
+  useEffect(() => {
+    const revealTargets = document.querySelectorAll<HTMLElement>('[data-reveal]');
+    if (!('IntersectionObserver' in window)) {
+      revealTargets.forEach((target) => target.classList.add('is-visible'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries, revealObserver) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealTargets.forEach((target) => observer.observe(target));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="editorial-theme relative min-h-screen font-sans">
