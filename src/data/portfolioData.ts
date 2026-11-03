@@ -38,8 +38,8 @@ export const PERSONAL_INFO = {
   location: "Lagos, Nigeria",
   status: "Available for Senior AI / Full-Stack Roles & High-Impact Consulting",
   email: "adebusolatomiwa2017@gmail.com",
-  phone: "+234 813 330 3907",
-  whatsappUrl: "https://wa.me/2348133303907?text=Hello%20Adebusola,%20I%20reviewed%20your%20AI%20Engineering%20and%20Web%20portfolio!",
+  phone: "+234 805 264 6511",
+  whatsappUrl: "https://wa.me/2348052646511?text=Hello%20Adebusola,%20I%20reviewed%20your%20AI%20Engineering%20and%20Web%20portfolio!",
   githubUrl: "https://github.com/tgracempire-ship-it",
   summary: "AI Systems Engineer and Full-Stack Architect building production RAG systems, WhatsApp autonomous agents, multimodal media pipelines, and high-conversion web products.",
   coreValues: [

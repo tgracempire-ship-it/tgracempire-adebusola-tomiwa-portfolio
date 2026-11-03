@@ -97,6 +97,17 @@ body { background: var(--ink); color: var(--paper); font-family: 'Manrope', 'Plu
 .editorial-hero__tools button { display: inline-flex; align-items: center; gap: 7px; border: 0; background: none; color: #64716b; font: 10px/1 'JetBrains Mono', monospace; cursor: pointer; }
 .editorial-hero__tools button:hover { color: var(--accent); }
 .editorial-theme .glow-card::after { display: none; }
+.dossier-title { font-family: 'DM Serif Display', Georgia, serif; letter-spacing: -.045em; }
+.dossier-canvas [class*="bg-slate-900"], .dossier-canvas [class*="bg-slate-950"] { background: rgba(255,255,255,.42) !important; }
+.dossier-canvas [class*="border-slate-800"] { border-color: rgba(23,32,29,.14) !important; }
+.dossier-canvas [class*="text-white"], .dossier-canvas [class*="text-slate-100"], .dossier-canvas [class*="text-slate-200"], .dossier-canvas [class*="text-slate-300"] { color: var(--ink) !important; }
+.dossier-canvas [class*="text-slate-400"], .dossier-canvas [class*="text-slate-500"] { color: var(--ink-soft) !important; }
+.dossier-canvas [class*="text-cyan-300"], .dossier-canvas [class*="text-cyan-400"] { color: var(--accent) !important; }
+.dossier-canvas [class*="text-emerald-300"], .dossier-canvas [class*="text-emerald-400"] { color: #427a62 !important; }
+.dossier-canvas [class*="text-amber-300"], .dossier-canvas [class*="text-amber-400"] { color: #9b5b2f !important; }
+.dossier-canvas [class*="text-purple-300"], .dossier-canvas [class*="text-purple-400"] { color: #72536f !important; }
+.dossier-canvas [class*="bg-emerald-950"], .dossier-canvas [class*="bg-cyan-950"], .dossier-canvas [class*="bg-amber-950"], .dossier-canvas [class*="bg-purple-950"] { background: #e3ddd1 !important; }
+.dossier-canvas [class*="border-emerald"], .dossier-canvas [class*="border-cyan"], .dossier-canvas [class*="border-amber"], .dossier-canvas [class*="border-purple"] { border-color: rgba(23,32,29,.16) !important; }
 .editorial-theme #projects, .editorial-theme #skills, .editorial-theme #journey, .editorial-theme #contact { background: var(--paper-bg) !important; color: var(--ink) !important; }
 .editorial-theme #projects h2, .editorial-theme #skills h2, .editorial-theme #journey h2, .editorial-theme #contact h2 { color: var(--ink) !important; }
 .editorial-theme #projects .rounded-none, .editorial-theme #projects .bg-\[\#111722\] { background: #e7e1d6 !important; border-color: rgba(23,32,29,.18) !important; box-shadow: none !important; }

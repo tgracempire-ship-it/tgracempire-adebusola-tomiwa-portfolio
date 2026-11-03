@@ -34,13 +34,13 @@ export const ExecutivePosterModal: React.FC<ExecutivePosterModalProps> = ({ isOp
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-slate-950/90 backdrop-blur-xl overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-[#17201d]/80 backdrop-blur-md overflow-y-auto">
       
       {/* Floating Action Controls */}
       <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-2.5 print:hidden">
         <button
           onClick={handlePrint}
-          className="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs font-mono transition-all flex items-center gap-2 shadow-lg shadow-cyan-500/25"
+          className="px-4 py-2 rounded-full bg-[#17201d] hover:bg-[#c95f3d] text-[#f4f0e8] font-bold text-xs font-mono transition-all flex items-center gap-2 shadow-lg"
         >
           <Printer className="w-4 h-4" />
           <span>Print / Save PDF</span>
@@ -48,7 +48,7 @@ export const ExecutivePosterModal: React.FC<ExecutivePosterModalProps> = ({ isOp
 
         <button
           onClick={onClose}
-          className="p-2 rounded-xl bg-slate-900 border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500 transition-colors"
+          className="p-2 rounded-full bg-[#f4f0e8] border border-[#17201d]/20 text-[#17201d] hover:text-[#c95f3d] hover:border-[#c95f3d] transition-colors"
           title="Close Poster View"
         >
           <X className="w-5 h-5" />
@@ -58,66 +58,65 @@ export const ExecutivePosterModal: React.FC<ExecutivePosterModalProps> = ({ isOp
       {/* Main Poster Canvas (Magazine / Keynote Editorial Layout) */}
       <div 
         ref={posterRef}
-        className="relative w-full max-w-5xl my-4 bg-[#070A12] border-2 border-cyan-500/40 rounded-3xl shadow-2xl p-6 sm:p-10 md:p-12 text-slate-100 overflow-hidden neural-grid print:border-none print:p-0 print:shadow-none print:m-0 print:max-w-none print:bg-white print:text-slate-900"
+        className="dossier-canvas relative w-full max-w-6xl my-4 bg-[#f4f0e8] border border-[#17201d]/15 rounded-[2rem] shadow-2xl p-6 sm:p-10 md:p-14 text-[#17201d] overflow-hidden print:border-none print:p-0 print:shadow-none print:m-0 print:max-w-none print:bg-white print:text-slate-900"
       >
         {/* Editorial Top Border Tech Bar */}
-        <div className="flex flex-wrap items-center justify-between pb-6 mb-8 border-b border-slate-800 text-xs font-mono text-slate-400 print:border-slate-300 print:text-slate-600">
+        <div className="flex flex-wrap items-center justify-between pb-6 mb-8 border-b border-[#17201d]/15 text-xs font-mono text-[#64716b] print:border-slate-300 print:text-slate-600">
           <div className="flex items-center gap-3">
-            <span className="px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800/60 font-bold tracking-widest text-[10px] print:bg-slate-100 print:text-slate-900">
+            <span className="px-2 py-0.5 rounded bg-[#17201d] text-[#f4f0e8] border border-[#17201d] font-bold tracking-widest text-[10px] print:bg-slate-100 print:text-slate-900">
               DOSSIER // REF-2026.AI
             </span>
             <span>SPEC: AI SYSTEMS ARCHITECT</span>
           </div>
 
           <div className="flex items-center gap-4">
-            <span className="text-emerald-400 font-bold flex items-center gap-1.5 print:text-emerald-700">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse print:hidden"></span>
-              DEPLOYED STATUS: ACTIVE
+            <span className="text-[#c95f3d] font-bold flex items-center gap-1.5 print:text-emerald-700">
+              <span className="w-2 h-2 rounded-full bg-[#c95f3d] print:hidden"></span>
+              AVAILABLE FOR SELECTED BUILDS
             </span>
-            <span className="hidden sm:inline text-slate-500">&bull;</span>
+            <span className="hidden sm:inline text-[#64716b]">&bull;</span>
             <span className="hidden sm:inline">ORIGIN: OAU</span>
           </div>
         </div>
 
         {/* Poster Masthead & Portrait Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-10 pb-10 border-b border-slate-800/80 print:border-slate-300">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-10 pb-10 border-b border-[#17201d]/15 print:border-slate-300">
           
           {/* Masthead Left: Big Typographic Impact */}
           <div className="lg:col-span-8 space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/80 border border-amber-500/30 text-amber-300 text-xs font-mono font-bold print:border-amber-600 print:text-amber-800">
-              <Sigma className="w-3.5 h-3.5" />
-              <span>PRODUCTION AI SYSTEMS &bull; FULL-STACK DELIVERY</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e3ddd1] border border-[#c95f3d]/35 text-[#c95f3d] text-xs font-mono font-bold print:border-amber-600 print:text-amber-800">
+              <Layers className="w-3.5 h-3.5" />
+              <span>PROFILE / AI SYSTEMS + WEB PRODUCTS</span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-[1.05] print:text-slate-950">
+            <h1 className="dossier-title text-5xl sm:text-7xl font-normal tracking-tight text-[#17201d] leading-[.92] print:text-slate-950">
               ADEBUSOLA <br className="hidden sm:inline" />
-              <span className="text-cyan-300 print:text-cyan-800">
+              <span className="text-[#c95f3d] print:text-cyan-800">
                 TOMIWA
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-300 font-mono leading-snug print:text-slate-700">
-              Senior Artificial Intelligence Engineer &bull; Full-Stack Systems Architect
+            <p className="text-base sm:text-lg text-[#52615b] font-mono leading-snug print:text-slate-700">
+              AI systems engineer &bull; Full-stack architect
             </p>
 
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-2xl font-sans print:text-slate-600">
-              AI Systems Engineer and Full-Stack Architect building production software across retrieval, autonomous agents, media, and the web. 
-              Architect of multi-turn 24/7 WhatsApp customer care agents (Estamo Care), 500+ hour speech vector retrieval backends (Pastor Niyi AI), offline-first learning platforms (Mavisual), and modern web products.
+            <p className="text-sm sm:text-base text-[#52615b] leading-relaxed max-w-2xl font-sans print:text-slate-600">
+              I build useful systems where AI, product thinking, and dependable engineering meet—retrieval, autonomous agents, media workflows, and modern web products.
             </p>
 
             {/* Quick Contact Line */}
-            <div className="flex flex-wrap items-center gap-4 pt-2 text-xs font-mono text-slate-400 print:text-slate-700">
-              <span className="flex items-center gap-1.5 text-cyan-300 font-semibold print:text-cyan-900">
-                <Mail className="w-3.5 h-3.5 text-cyan-400" />
+            <div className="flex flex-wrap items-center gap-4 pt-2 text-xs font-mono text-[#64716b] print:text-slate-700">
+              <span className="flex items-center gap-1.5 text-[#17201d] font-semibold print:text-cyan-900">
+                <Mail className="w-3.5 h-3.5 text-[#c95f3d]" />
                 adebusolatomiwa2017@gmail.com
               </span>
               <span>&bull;</span>
-              <span className="flex items-center gap-1.5 text-emerald-300 font-semibold print:text-emerald-900">
-                <Phone className="w-3.5 h-3.5 text-emerald-400" />
-                +234 813 330 3907
+              <span className="flex items-center gap-1.5 text-[#17201d] font-semibold print:text-emerald-900">
+                <Phone className="w-3.5 h-3.5 text-[#c95f3d]" />
+                {PERSONAL_INFO.phone}
               </span>
               <span>&bull;</span>
-              <span className="flex items-center gap-1.5 text-slate-300 print:text-slate-800">
+              <span className="flex items-center gap-1.5 text-[#52615b] print:text-slate-800">
                 <GithubIcon className="w-3.5 h-3.5" />
                 tgracempire-ship-it
               </span>
@@ -126,34 +125,34 @@ export const ExecutivePosterModal: React.FC<ExecutivePosterModalProps> = ({ isOp
 
           {/* Masthead Right: Editorial Tech Portrait Frame */}
           <div className="lg:col-span-4 flex justify-center">
-            <div className="relative p-2.5 rounded-3xl bg-gradient-to-br from-cyan-500/30 via-slate-800 to-amber-500/20 border-2 border-cyan-400/50 shadow-2xl shadow-cyan-950/40 print:border-slate-400 print:shadow-none">
+            <div className="relative p-2.5 rounded-3xl bg-[#e3ddd1] border border-[#c95f3d]/50 shadow-xl print:border-slate-400 print:shadow-none">
               
               {/* Corner Tech Reticles */}
-              <div className="absolute -top-1.5 -left-1.5 w-4 h-4 border-t-2 border-l-2 border-cyan-400"></div>
-              <div className="absolute -top-1.5 -right-1.5 w-4 h-4 border-t-2 border-r-2 border-cyan-400"></div>
-              <div className="absolute -bottom-1.5 -left-1.5 w-4 h-4 border-b-2 border-l-2 border-cyan-400"></div>
-              <div className="absolute -bottom-1.5 -right-1.5 w-4 h-4 border-b-2 border-r-2 border-cyan-400"></div>
+              <div className="absolute -top-1.5 -left-1.5 w-4 h-4 border-t-2 border-l-2 border-[#c95f3d]"></div>
+              <div className="absolute -top-1.5 -right-1.5 w-4 h-4 border-t-2 border-r-2 border-[#c95f3d]"></div>
+              <div className="absolute -bottom-1.5 -left-1.5 w-4 h-4 border-b-2 border-l-2 border-[#c95f3d]"></div>
+              <div className="absolute -bottom-1.5 -right-1.5 w-4 h-4 border-b-2 border-r-2 border-[#c95f3d]"></div>
 
               {/* Portrait Image */}
               <div className="relative w-56 h-72 sm:w-64 sm:h-80 rounded-2xl overflow-hidden bg-slate-950">
                 <img 
-                  src="images/portrait_real.jpg" 
+                  src="/images/profile-generated.png"
                   alt="Adebusola Tomiwa" 
                   className="w-full h-full object-cover object-top"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = "images/poster_portrait_cam.jpg";
+                    (e.target as HTMLImageElement).src = "/images/avatar.jpg";
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent print:hidden"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#17201d]/75 via-transparent to-transparent print:hidden"></div>
 
                 {/* Cyber Badge Overlay */}
-                <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl bg-slate-950/80 backdrop-blur-md border border-cyan-500/30 text-[10px] font-mono text-cyan-300 print:bg-white print:text-slate-900 print:border-slate-300">
+                <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl bg-[#17201d]/80 backdrop-blur-md border border-[#f4f0e8]/30 text-[10px] font-mono text-[#f4f0e8] print:bg-white print:text-slate-900 print:border-slate-300">
                   <div className="flex items-center justify-between font-bold">
                     <span>EMBEDDING SPACE</span>
-                    <span className="text-amber-400">768-D</span>
+                    <span className="text-[#e7b08f]">PROFILE</span>
                   </div>
                   <div className="text-[9px] text-slate-400 truncate print:text-slate-600">
-                    OAU B.Sc. &bull; AI Architect
+                    Lagos &bull; AI Systems
                   </div>
                 </div>
               </div>
