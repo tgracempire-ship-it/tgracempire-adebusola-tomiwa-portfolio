@@ -34,7 +34,7 @@ export const ExecutivePosterModal: React.FC<ExecutivePosterModalProps> = ({ isOp
   };
 
   return (
-    <div className="dossier-print-overlay fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-[#17201d]/80 backdrop-blur-md overflow-y-auto">
+    <div className="dossier-print-overlay fixed inset-0 z-50 flex items-start justify-center p-2 sm:p-4 md:p-6 bg-[#17201d]/80 backdrop-blur-md overflow-y-auto">
       
       {/* Floating Action Controls */}
       <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-2.5 print:hidden">
@@ -58,7 +58,7 @@ export const ExecutivePosterModal: React.FC<ExecutivePosterModalProps> = ({ isOp
       {/* Main Poster Canvas (Magazine / Keynote Editorial Layout) */}
       <div 
         ref={posterRef}
-        className="dossier-canvas relative w-full max-w-6xl my-4 bg-[#f4f0e8] border border-[#17201d]/15 rounded-[2rem] shadow-2xl p-6 sm:p-10 md:p-14 text-[#17201d] overflow-hidden print:border-none print:p-0 print:shadow-none print:m-0 print:max-w-none print:bg-white print:text-slate-900"
+        className="dossier-canvas relative w-full max-w-6xl my-4 sm:my-6 bg-[#f4f0e8] border border-[#17201d]/15 rounded-[2rem] shadow-2xl p-6 sm:p-10 md:p-14 text-[#17201d] overflow-hidden print:border-none print:p-0 print:shadow-none print:m-0 print:max-w-none print:bg-white print:text-slate-900"
       >
         {/* Editorial Top Border Tech Bar */}
         <div className="flex flex-wrap items-center justify-between pb-6 mb-8 border-b border-[#17201d]/15 text-xs font-mono text-[#64716b] print:border-slate-300 print:text-slate-600">
