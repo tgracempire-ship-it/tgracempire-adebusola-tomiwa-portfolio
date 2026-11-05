@@ -194,13 +194,18 @@ section[id] { scroll-margin-top: 96px; }
 /* Print / PDF Export Styles */
 @media print {
   @page {
-    margin: 8mm;
+    margin: 5mm;
     size: A4 landscape;
   }
 
   body {
     background: #ffffff !important;
     color: #0f172a !important;
+  }
+
+  /* Remove the live portfolio layout from the print flow. The dossier is the only page. */
+  .editorial-theme > *:not(.dossier-print-overlay) {
+    display: none !important;
   }
 
   /* Print only the open dossier, not the portfolio behind it. */
@@ -214,6 +219,8 @@ section[id] { scroll-margin-top: 96px; }
   .dossier-print-overlay {
     position: static !important;
     display: block !important;
+    width: 100% !important;
+    height: auto !important;
     padding: 0 !important;
     overflow: visible !important;
     background: #ffffff !important;
@@ -223,12 +230,21 @@ section[id] { scroll-margin-top: 96px; }
     max-width: none !important;
     min-height: 0 !important;
     margin: 0 !important;
-    padding: 8mm !important;
+    padding: 4mm !important;
     border: 0 !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     overflow: visible !important;
+    zoom: .52 !important;
+    width: 192.3% !important;
+    transform-origin: top left !important;
   }
+  .dossier-canvas > .mb-10 { margin-bottom: 5px !important; padding-bottom: 5px !important; }
+  .dossier-canvas > .mb-8 { margin-bottom: 4px !important; }
+  .dossier-canvas .space-y-4 > * + * { margin-top: 4px !important; }
+  .dossier-canvas .leading-relaxed { line-height: 1.2 !important; }
+  .dossier-canvas .text-\[10px\] { font-size: 8px !important; }
+  .dossier-canvas .text-\[11px\] { font-size: 8px !important; }
   .dossier-canvas .mb-10 { margin-bottom: 10px !important; }
   .dossier-canvas .mb-8 { margin-bottom: 8px !important; }
   .dossier-canvas .p-5 { padding: 10px !important; }

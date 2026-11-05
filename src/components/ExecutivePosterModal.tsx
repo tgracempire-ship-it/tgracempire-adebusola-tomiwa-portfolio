@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { 
   X, 
   Printer, 
@@ -25,7 +25,16 @@ interface ExecutivePosterModalProps {
 }
 
 export const ExecutivePosterModal: React.FC<ExecutivePosterModalProps> = ({ isOpen, onClose }) => {
+  const overlayRef = useRef<HTMLDivElement>(null);
   const posterRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const overlay = overlayRef.current;
+    overlay?.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.body.classList.add('dossier-open');
+    return () => document.body.classList.remove('dossier-open');
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -34,7 +43,7 @@ export const ExecutivePosterModal: React.FC<ExecutivePosterModalProps> = ({ isOp
   };
 
   return (
-    <div className="dossier-print-overlay fixed inset-0 z-50 flex items-start justify-center p-2 sm:p-4 md:p-6 bg-[#17201d]/80 backdrop-blur-md overflow-y-auto">
+    <div ref={overlayRef} className="dossier-print-overlay fixed inset-0 z-50 flex items-start justify-center p-2 sm:p-4 md:p-6 bg-[#17201d]/80 backdrop-blur-md overflow-y-auto" role="dialog" aria-modal="true" aria-label="Executive dossier">
       
       {/* Floating Action Controls */}
       <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-2.5 print:hidden">
