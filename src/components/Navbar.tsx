@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowUpRight, FileText, Menu, X } from 'lucide-react';
+import { ArrowUpRight, FileText, Menu, X, Church } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
-interface NavbarProps { onOpenTerminal: () => void; onOpenPoster: () => void; }
+interface NavbarProps { 
+  onOpenTerminal: () => void; 
+  onOpenPoster: () => void; 
+  onOpenChurchProposal?: () => void;
+}
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenPoster }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenPoster, onOpenChurchProposal }) => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('projects');
@@ -41,12 +45,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTerminal, onOpenPoster }) 
           {links.map((link) => <a key={link.id} className={activeSection === link.id ? 'is-active' : ''} aria-current={activeSection === link.id ? 'page' : undefined} href={`#${link.id}`}>{link.label}</a>)}
         </nav>
         <div className="editorial-nav__actions">
+          {onOpenChurchProposal && (
+            <button className="editorial-dossier" style={{ borderColor: 'rgba(0, 240, 255, 0.4)', color: '#38bdf8' }} onClick={onOpenChurchProposal} type="button">
+              <Church size={14} /> Church AI Proposal
+            </button>
+          )}
           <button className="editorial-dossier" onClick={onOpenPoster} type="button"><FileText size={14} /> Dossier</button>
           <a className="editorial-connect" href={PERSONAL_INFO.whatsappUrl} target="_blank" rel="noreferrer">Let’s talk <ArrowUpRight size={14} /></a>
           <button className="editorial-menu" onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'} type="button">{open ? <X size={19} /> : <Menu size={19} />}</button>
         </div>
       </div>
-      {open && <div className="editorial-mobile-menu">{links.map((link) => <a key={link.id} href={`#${link.id}`} onClick={close}>{link.label}</a>)}<button onClick={() => { close(); onOpenTerminal(); }} type="button">Open engineering notes</button></div>}
+      {open && (
+        <div className="editorial-mobile-menu">
+          {links.map((link) => (
+            <a key={link.id} href={`#${link.id}`} onClick={close}>{link.label}</a>
+          ))}
+          {onOpenChurchProposal && (
+            <button onClick={() => { close(); onOpenChurchProposal(); }} type="button" style={{ color: '#38bdf8' }}>
+              <Church size={15} style={{ display: 'inline', marginRight: 6 }} /> Church AI Proposal Generator
+            </button>
+          )}
+          <button onClick={() => { close(); onOpenTerminal(); }} type="button">Open engineering notes</button>
+        </div>
+      )}
     </header>
   );
 };

@@ -1,13 +1,14 @@
 import React from 'react';
-import { ArrowDownRight, ArrowUpRight, ExternalLink, FileText } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, ExternalLink, FileText, Church } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface HeroProps {
   onOpenTerminal: () => void;
   onOpenPoster: () => void;
+  onOpenChurchProposal?: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenTerminal, onOpenPoster }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenTerminal, onOpenPoster, onOpenChurchProposal }) => {
   return (
     <section className="editorial-hero" data-reveal="hero">
       <div className="editorial-hero__wash" aria-hidden="true" />
@@ -55,6 +56,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenTerminal, onOpenPoster }) => {
         </div>
 
         <div className="editorial-hero__tools">
+          {onOpenChurchProposal && (
+            <button onClick={onOpenChurchProposal} type="button" style={{ borderColor: 'rgba(0, 240, 255, 0.35)', color: '#38bdf8' }}>
+              <Church size={15} /> Propose Church AI
+            </button>
+          )}
           <button onClick={onOpenTerminal} type="button">Open engineering notes <ExternalLink size={14} /></button>
         </div>
       </div>

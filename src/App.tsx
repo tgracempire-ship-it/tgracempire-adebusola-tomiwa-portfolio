@@ -8,10 +8,13 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { TerminalModal } from './components/TerminalModal';
 import { ExecutivePosterModal } from './components/ExecutivePosterModal';
+import { ChurchProposalModal } from './components/ChurchProposalModal';
+import confetti from 'canvas-confetti';
 
 export function App() {
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const [isPosterOpen, setIsPosterOpen] = useState(false);
+  const [isChurchProposalOpen, setIsChurchProposalOpen] = useState(false);
 
   useEffect(() => {
     const revealTargets = document.querySelectorAll<HTMLElement>('[data-reveal]');
@@ -38,6 +41,7 @@ export function App() {
       <Navbar 
         onOpenTerminal={() => setIsTerminalOpen(true)}
         onOpenPoster={() => setIsPosterOpen(true)}
+        onOpenChurchProposal={() => setIsChurchProposalOpen(true)}
       />
 
       {/* Main Content */}
@@ -45,6 +49,7 @@ export function App() {
         <Hero 
           onOpenTerminal={() => setIsTerminalOpen(true)}
           onOpenPoster={() => setIsPosterOpen(true)}
+          onOpenChurchProposal={() => setIsChurchProposalOpen(true)}
         />
 
         <ProjectsSection />
@@ -53,7 +58,7 @@ export function App() {
 
         <TimelineSection />
 
-        <ContactSection />
+        <ContactSection onOpenChurchProposal={() => setIsChurchProposalOpen(true)} />
       </main>
 
       {/* Footer */}
@@ -69,6 +74,12 @@ export function App() {
       <ExecutivePosterModal
         isOpen={isPosterOpen}
         onClose={() => setIsPosterOpen(false)}
+      />
+
+      {/* Church & Ministry AI Proposal Generator Modal */}
+      <ChurchProposalModal
+        isOpen={isChurchProposalOpen}
+        onClose={() => setIsChurchProposalOpen(false)}
       />
 
     </div>

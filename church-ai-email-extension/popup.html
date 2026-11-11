@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChurchAI Outreach</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="extension-container">
+    
+    <!-- Top Header -->
+    <header class="header">
+      <div class="brand">
+        <span class="badge">CHURCH OUTREACH</span>
+        <h1>ChurchAI Proposal Hub</h1>
+      </div>
+      <div class="demo-tag">
+        <a href="https://pastor-niyi-ai.onrender.com" target="_blank" title="Test Live Demo">Live Demo ↗</a>
+      </div>
+    </header>
+
+    <!-- Scan Bar -->
+    <div class="scan-bar">
+      <button id="scanBtn" class="btn-scan">🔍 Scan Current Page for Church Email</button>
+      <div id="scanStatus" class="scan-status"></div>
+    </div>
+
+    <!-- Form Inputs -->
+    <div class="form-grid">
+      <div class="input-group">
+        <label for="churchName">Church / Ministry Name</label>
+        <input type="text" id="churchName" placeholder="e.g. Grace City Church" />
+      </div>
+
+      <div class="input-group">
+        <label for="pastorName">Pastor / Minister Name</label>
+        <input type="text" id="pastorName" placeholder="e.g. Pastor David" />
+      </div>
+
+      <div class="input-group full-width">
+        <label for="recipientEmail">
+          Pastor / Office Email 
+          <span id="emailValidationBadge" class="val-badge">Optional</span>
+        </label>
+        <input type="email" id="recipientEmail" placeholder="pastor@church.org" />
+        <div id="emailError" class="error-msg"></div>
+      </div>
+
+      <div class="input-group">
+        <label for="templateSelect">Outreach Angle</label>
+        <select id="templateSelect">
+          <option value="senior-pastor">Senior Pastor (Legacy & 24/7 Care)</option>
+          <option value="media-director">Media / Tech Team (YouTube & Website)</option>
+          <option value="quick-hook">Quick 3-Sentence Hook (Mobile)</option>
+          <option value="whatsapp">WhatsApp / Social DM</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="currencySelect">Pricing Currency</label>
+        <select id="currencySelect">
+          <option value="USD">USD ($ - Global / US)</option>
+          <option value="NGN">NGN (₦ - Nigeria / Africa)</option>
+          <option value="GBP">GBP (£ - UK / Europe)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Preview Area -->
+    <div class="preview-card">
+      <div class="preview-header">
+        <span class="preview-label">SUBJECT:</span>
+        <strong id="subjectPreview" class="subject-text">...</strong>
+      </div>
+      <textarea id="bodyPreview" readonly class="body-textarea"></textarea>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions">
+      <button id="copyBtn" class="btn-primary">📋 Copy Proposal</button>
+      <button id="gmailBtn" class="btn-secondary">🌐 Open in Gmail</button>
+      <button id="mailtoBtn" class="btn-secondary">✉️ Desktop Mail</button>
+      <button id="waBtn" class="btn-whatsapp">💬 WhatsApp</button>
+    </div>
+
+    <footer class="footer">
+      <span>Built for Adebusola Tomiwa • Based on Pastor Niyi AI</span>
+    </footer>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
